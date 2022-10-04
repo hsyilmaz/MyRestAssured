@@ -74,9 +74,9 @@ public class Tasks {
                 .statusCode(200)
                 .log().body()
                 .contentType(ContentType.JSON)
-//                .body("userId",equalTo(1))
-//                .body("id",equalTo(3))
-//                .body("title",equalTo("fugiat veniam minus"))
+                .body("userId",equalTo(1))
+                .body("id",equalTo(3))
+                .body("title",equalTo("fugiat veniam minus"))
 
         ;
     }

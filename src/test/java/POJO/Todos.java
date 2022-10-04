@@ -42,11 +42,6 @@ public class Todos {
 
     @Override
     public String toString() {
-        return "ToDo{" +
-                "userId=" + userId +
-                ", id=" + id +
-                ", unvan='" + unvan + '\'' +
-                ", completed=" + completed +
-                '}';
+        return "ToDo{" + "userId=" + userId + ", id=" + id + ", unvan='" + unvan + '\'' + ", completed=" + completed + '}';
     }
 }

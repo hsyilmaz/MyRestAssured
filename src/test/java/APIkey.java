@@ -1,9 +1,8 @@
 import org.testng.annotations.Test;
 
 import static io.restassured.RestAssured.*;
-import static org.hamcrest.Matchers.*;
 
-public class InterviewTest {
+public class APIkey {
     @Test
     void testApiKey()
     {

@@ -1,14 +1,14 @@
 package GoRest;
 
+import GoRest.Model.User;
 import io.restassured.http.ContentType;
 import io.restassured.response.Response;
 import org.apache.commons.lang3.RandomStringUtils;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
-
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
-
 import static io.restassured.RestAssured.*;
 import static org.hamcrest.Matchers.*;
 
@@ -158,23 +158,76 @@ public class GoRestUserTest {
                         .log().body()
                         .statusCode(200)
                         .extract().response()
+                        //.extract().jsonPath().getInt("id")
                 ;
 
-        // TODO : 3 usersın id sini alınız (path ve jsonPath ile ayrı ayrı yapınız)
-        // TODO : Tüm gelen veriyi bir nesneye atınız
-        // TODO : GetUserByID testinde dönen user ı bir nesneye atınız.
+        // TODO : 3 usersın id sini alınız (path ve jsonPath ile ayrı ayrı yapınız) //(v1 version boyle idi: data.[2].id)
+
+        List <Integer> idUsers=response.path("id");
+        List<Integer> idUsersJsonPath = response.jsonPath().getList("id");
+            System.out.println("idUsers = " + idUsers);
+            System.out.println("idUsersJson = " + idUsersJsonPath);
+
+        int idUserThird = response.path("[2].id");
+        int idUser3rd = response.jsonPath().getInt("[2].id");
+            System.out.println("idUser3. = " + idUserThird);
+            System.out.println("idUser3. = " + idUser3rd);
+
     }
 
 
 
+    @Test       // TODO : GetUserByID testinde dönen user ı bir nesneye atınız.
+    public void getUserByIDExtract() {
+        User user=
+        given()
+                .header("Authorization", "Bearer 523891d26e103bab0089022d20f1820be2999a7ad693304f560132559a2a152d")
+                .contentType(ContentType.JSON)
+                .pathParam("userID", 3584)
+
+                .when()
+                .get("users/{userID}")
+
+                .then()
+                .log().body()
+                .statusCode(200)
+                .extract().as(User.class);
+                //.extract().jsonPath().getObject("",User.class);
+        System.out.println("user = " + user);
+    }
 
 
+    // TODO : Tüm gelen veriyi bir nesneye atınız
+    @Test
+    public void getUsersV1() {
+        Response response =
+                given()
+                        .header("Authorization", "Bearer 523891d26e103bab0089022d20f1820be2999a7ad693304f560132559a2a152d")
 
+                        .when()
+                        .get("https://gorest.co.in/public/v1/users")
 
+                        .then()
+                        //.log().body()
+                        .statusCode(200)
+                        .extract().response();
 
+        //        response.as();  // tüm gelen response uygun nesneler için tüm classların yapılması gerekiyor.
 
+        List<User> dataUsers = response.jsonPath().getList("data", User.class);  // JSONPATH bir response içindeki bir parçayı
+        // nesneye ödnüştürebiliriz.
+        System.out.println("dataUsers = " + dataUsers);
 
+    /** Daha önceki örneklerde (as) Clas dönüşümleri için tüm yapıya karşılık gelen
+     gereken tüm classları yazarak dönüştürüp istediğimiz elemanlara ulaşıyorduk.
+     Burada ise(JsonPath) aradaki bir veriyi clasa dönüştürerek bir list olarak almamıza
+     imkan veren JSONPATH i kullandık.Böylece tek class ise veri alınmış oldu
+     diğer class lara gerek kalmadan
 
+     path : class veya tip dönüşümüne imkan veremeyen direk veriyi verir. List<String> gibi
+     jsonPath : class dönüşümüne ve tip dönüşümüne izin vererek , veriyi istediğimiz formatta verir. */
+
+    }
 
 
     @Test(enabled = false)
@@ -227,38 +280,15 @@ public class GoRestUserTest {
 
         System.out.println("userID = " + userID);
     }
+    /** Daha önceki örneklerde (as) Clas dönüşümleri için tüm yapıya karşılık gelen
+    gereken tüm classları yazarak dönüştürüp istediğimiz elemanlara ulaşıyorduk.
+    Burada ise(JsonPath) aradaki bir veriyi clasa dönüştürerek bir list olarak almamıza
+    imkan veren JSONPATH i kullandık.Böylece tek class ise veri alınmış oldu
+    diğer class lara gerek kalmadan
+
+    path : class veya tip dönüşümüne imkan veremeyen direk veriyi verir. List<String> gibi
+    jsonPath : class dönüşümüne ve tip dönüşümüne izin vererek , veriyi istediğimiz formatta verir. */
+
 
 
 }
-class User{
-    private String name;
-    private String gender;
-    private String email;
-    private String status;
-
-    public String getName() {
-        return name;
-    }
-    public void setName(String name) {
-        this.name = name;
-    }
-    public String getGender() {
-        return gender;
-    }
-    public void setGender(String gender) {
-        this.gender = gender;
-    }
-    public String getEmail() {
-        return email;
-    }
-    public void setEmail(String email) {
-        this.email = email;
-    }
-    public String getStatus() {
-        return status;
-    }
-    public void setStatus(String status) {
-        this.status = status;
-    }
-}
-

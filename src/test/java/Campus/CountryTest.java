@@ -40,9 +40,18 @@ public class CountryTest {
         ;
     }
 
+
+    public String getRandomName(){
+        return RandomStringUtils.randomAlphabetic(8).toLowerCase();
+    }
+    public String getRandomCode(){
+        return RandomStringUtils.randomAlphanumeric(3).toLowerCase();
+    }
+
     String countryID;
     String countryName;
     String countryCode;
+    Country country = new Country();
 
     @Test
     public void createCountry()
@@ -50,7 +59,7 @@ public class CountryTest {
         countryName = getRandomName();
         countryCode = getRandomCode();
 
-        Country country = new Country();
+
         country.setName(countryName); // generateCountryName
         country.setCode(countryCode);  // generateCountryCode
 
@@ -68,10 +77,9 @@ public class CountryTest {
                 .log().body()
                 .statusCode(201)
                 .extract().jsonPath().getString("id")
+                //.extract().path("id")
         ;
-
     }
-
     @Test(dependsOnMethods = "createCountry")
     public void createCountryNegative()
     {
@@ -91,16 +99,14 @@ public class CountryTest {
                         .log().body()
                         .statusCode(400)
                         .body("message",equalTo("The Country with Name \""+countryName+"\" already exists."))
-
         ;
     }
-
     @Test(dependsOnMethods = "createCountry")
     public void updateCountry()
     {
         countryName = getRandomName();
 
-        Country country = new Country();
+        //Country country = new Country();
         country.setId(countryID);
         country.setName(countryName); // generateCountryName
         country.setCode(countryCode);  // generateCountryCode
@@ -109,6 +115,7 @@ public class CountryTest {
                 .cookies(cookies)
                 .contentType(ContentType.JSON)
                 .body(country)
+
 
                 .when()
                 .put("school-service/api/countries")
@@ -177,17 +184,23 @@ public class CountryTest {
         ;
 
     }
+    @Test
+    public void searchCountry()
+    {
 
+        given()
+                .cookies(cookies)
+                .contentType(ContentType.JSON)
+                .body("{ }")
 
+                .when()
+                .post("school-service/api/countries/search")
 
+                .then()
+                .log().body()
+                .statusCode(200)
+        ;
 
-
-
-    public String getRandomName(){
-        return RandomStringUtils.randomAlphabetic(8).toLowerCase();
-    }
-    public String getRandomCode(){
-        return RandomStringUtils.randomAlphabetic(3).toLowerCase();
     }
 
 }

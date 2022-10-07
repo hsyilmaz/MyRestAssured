@@ -14,7 +14,6 @@ import java.util.List;
 
 import static io.restassured.RestAssured.*;
 import static org.hamcrest.Matchers.*;
-//import static org.hamcrest.Matchers.equalTo;
 
 public class ZippoTest {
 
@@ -275,7 +274,6 @@ public class ZippoTest {
     public void extractingJsonPathInt() {
 
         int limit =
-
                 given()
                         .when()
                         .get("http://gorest.co.in/public/v1/users")
@@ -292,7 +290,6 @@ public class ZippoTest {
     public void extractingJsonPathInt2() {
 
         int id =
-
                 given()
                         .when()
                         .get("http://gorest.co.in/public/v1/users")
@@ -308,7 +305,6 @@ public class ZippoTest {
     public void extractingJsonPathIntList() {
 
         List<Integer> ids =
-
                 given()
                         .when()
                         .get("http://gorest.co.in/public/v1/users")
@@ -325,7 +321,6 @@ public class ZippoTest {
     public void extractingJsonPathNameList() {
 
         List<String> names =
-
                 given()
                         .when()
                         .get("http://gorest.co.in/public/v1/users")

@@ -37,10 +37,10 @@ public class GoRestUserTest {
     @Test
     public void createUserObject()
     {
-        newUser = new User();                  //// Class Yontemi
+        newUser=new User ();
         newUser.setName(getRandomName());
-        newUser.setGender("male");
         newUser.setEmail(getRandomEmail());
+        newUser.setGender("male");
         newUser.setStatus("active");
 
         userID=
@@ -48,7 +48,6 @@ public class GoRestUserTest {
                 .header("Authorization","Bearer 502e4092439cc8b4dac5387966d8228a9a74a494639d2728ebd4b96c33fb4596" )
                 .contentType(ContentType.JSON)
                 .body(newUser)
-                //.body("{\"name\":\""+getRandomName()+"\", \"gender\":\"male\", \"email\":\""+getRandomEmail()+"\", \"status\":\"active\"}")
                 .log().body()
                 .when()
                 .post("users")
@@ -149,7 +148,7 @@ public class GoRestUserTest {
     {
         Response response=
                 given()
-                        .header("Authorization","Bearer 523891d26e103bab0089022d20f1820be2999a7ad693304f560132559a2a152d")
+                        .header("Authorization","Bearer 502e4092439cc8b4dac5387966d8228a9a74a494639d2728ebd4b96c33fb4596")
 
                         .when()
                         .get("users")
@@ -181,7 +180,7 @@ public class GoRestUserTest {
     public void getUserByIDExtract() {
         User user=
         given()
-                .header("Authorization", "Bearer 523891d26e103bab0089022d20f1820be2999a7ad693304f560132559a2a152d")
+                .header("Authorization", "Bearer 502e4092439cc8b4dac5387966d8228a9a74a494639d2728ebd4b96c33fb4596")
                 .contentType(ContentType.JSON)
                 .pathParam("userID", 3584)
 
@@ -202,7 +201,7 @@ public class GoRestUserTest {
     public void getUsersV1() {
         Response response =
                 given()
-                        .header("Authorization", "Bearer 523891d26e103bab0089022d20f1820be2999a7ad693304f560132559a2a152d")
+                        .header("Authorization", "Bearer 502e4092439cc8b4dac5387966d8228a9a74a494639d2728ebd4b96c33fb4596")
 
                         .when()
                         .get("https://gorest.co.in/public/v1/users")
@@ -280,14 +279,7 @@ public class GoRestUserTest {
 
         System.out.println("userID = " + userID);
     }
-    /** Daha önceki örneklerde (as) Clas dönüşümleri için tüm yapıya karşılık gelen
-    gereken tüm classları yazarak dönüştürüp istediğimiz elemanlara ulaşıyorduk.
-    Burada ise(JsonPath) aradaki bir veriyi clasa dönüştürerek bir list olarak almamıza
-    imkan veren JSONPATH i kullandık.Böylece tek class ise veri alınmış oldu
-    diğer class lara gerek kalmadan
 
-    path : class veya tip dönüşümüne imkan veremeyen direk veriyi verir. List<String> gibi
-    jsonPath : class dönüşümüne ve tip dönüşümüne izin vererek , veriyi istediğimiz formatta verir. */
 
 
 

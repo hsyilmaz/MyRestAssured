@@ -5,6 +5,13 @@ public class Country {
     String code;
     String id;
 
+    public Country (){}
+
+    public Country(String countryName, String countryCode) {
+        this.name = countryName;
+        this.code = countryCode;
+    }
+
     public String getName() {
         return name;
     }

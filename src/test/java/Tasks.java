@@ -66,18 +66,16 @@ public class Tasks {
     @Test
     public void task4() {
 
+
         given()
 
                 .when()
-                .get("https://jsonplaceholder.typicode.com/todos")
+                .get("https://jsonplaceholder.typicode.com/todos/3")
                 .then()
                 .statusCode(200)
                 .log().body()
                 .contentType(ContentType.JSON)
-                .body("userId",equalTo(1))
-                .body("id",equalTo(3))
                 .body("title",equalTo("fugiat veniam minus"))
-
         ;
     }
 

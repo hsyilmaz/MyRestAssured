@@ -20,49 +20,42 @@ public class CountryTest {
     {
         baseURI = "https://demo.mersys.io/";
 
-        Map<String,String> credential = new HashMap<>();
-        credential.put("username","richfield.edu" );
-        credential.put("password","Richfield2020!" );
-        credential.put("rememberMe","true" );
+        Map<String, String> credential = new HashMap<>();
+        credential.put("username", "richfield.edu");
+        credential.put("password", "Richfield2020!");
+        credential.put("rememberMe", "true");
 
-        cookies=
-        given()
-                .contentType(ContentType.JSON)
-                .body(credential)
+        cookies =
+                given()
+                        .contentType(ContentType.JSON)
+                        .body(credential)
 
-                .when()
-                .post("auth/login")
+                        .when()
+                        .post("auth/login")
 
-                .then()
-                .log().cookies()//.log().all()
-                .statusCode(200)
-                .extract().response().getDetailedCookies()
+                        .then()
+                        .log().cookies()//.log().all()
+                        .statusCode(200)
+                        .extract().response().getDetailedCookies()
         ;
     }
-
-
-    public String getRandomName(){
+        public String getRandomName () {
         return RandomStringUtils.randomAlphabetic(8).toLowerCase();
     }
-    public String getRandomCode(){
+        public String getRandomCode () {
         return RandomStringUtils.randomAlphanumeric(3).toLowerCase();
     }
-
-    String countryID;
-    String countryName;
-    String countryCode;
-    Country country = new Country();
+        String countryID;
+        String countryName = getRandomName();
+        String countryCode = getRandomCode();
 
     @Test
     public void createCountry()
     {
-        countryName = getRandomName();
-        countryCode = getRandomCode();
+        Country country = new Country(countryName, countryCode);
 
-
-        country.setName(countryName); // generateCountryName
-        country.setCode(countryCode);  // generateCountryCode
-
+//        country.setName(countryName); // generateCountryName
+//        country.setCode(countryCode);  // generateCountryCode
 
         countryID=
         given()
@@ -83,9 +76,7 @@ public class CountryTest {
     @Test(dependsOnMethods = "createCountry")
     public void createCountryNegative()
     {
-        Country country = new Country();
-        country.setName(countryName); // generateCountryName
-        country.setCode(countryCode);  // generateCountryCode
+        Country country = new Country(countryName, countryCode);
 
                 given()
                         .cookies(cookies)
@@ -106,16 +97,15 @@ public class CountryTest {
     {
         countryName = getRandomName();
 
-        //Country country = new Country();
+        Country country = new Country();
         country.setId(countryID);
-        country.setName(countryName); // generateCountryName
-        country.setCode(countryCode);  // generateCountryCode
+        country.setName(countryName);
+        country.setCode(countryCode);
 
         given()
                 .cookies(cookies)
                 .contentType(ContentType.JSON)
                 .body(country)
-
 
                 .when()
                 .put("school-service/api/countries")
@@ -161,14 +151,12 @@ public class CountryTest {
         ;
     }
     @Test(dependsOnMethods = "deleteCountryById")
-    public void updateDeletedCountryNegative()
+    public void updateCountryNegative()
     {
         countryName = getRandomName();
 
-        Country country = new Country();
+        Country country = new Country(countryName, countryCode);
         country.setId(countryID);
-        country.setName(countryName); // generateCountryName
-        country.setCode(countryCode);  // generateCountryCode
 
         given()
                 .cookies(cookies)
@@ -187,11 +175,10 @@ public class CountryTest {
     @Test
     public void searchCountry()
     {
-
         given()
                 .cookies(cookies)
                 .contentType(ContentType.JSON)
-                .body("{ }")
+                .body("{}")
 
                 .when()
                 .post("school-service/api/countries/search")
@@ -200,7 +187,6 @@ public class CountryTest {
                 .log().body()
                 .statusCode(200)
         ;
-
     }
 
 }

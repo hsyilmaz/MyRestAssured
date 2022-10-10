@@ -130,7 +130,7 @@ public class CountryTest {
 
                 .then()
                 .log().body()
-                .statusCode(208)
+                .statusCode(200)
         ;
     }
     @Test(dependsOnMethods = "deleteCountryById")
@@ -172,21 +172,21 @@ public class CountryTest {
         ;
 
     }
-    @Test
-    public void searchCountry()
-    {
-        given()
-                .cookies(cookies)
-                .contentType(ContentType.JSON)
-                .body("{}")
-
-                .when()
-                .post("school-service/api/countries/search")
-
-                .then()
-                .log().body()
-                .statusCode(200)
-        ;
-    }
+//    @Test
+//    public void searchCountry()
+//    {
+//        given()
+//                .cookies(cookies)
+//                .contentType(ContentType.JSON)
+//                .body("{}")
+//
+//                .when()
+//                .post("school-service/api/countries/search")
+//
+//                .then()
+//                .log().body()
+//                .statusCode(200)
+//        ;
+//    }
 
 }

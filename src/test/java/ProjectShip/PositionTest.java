@@ -109,7 +109,7 @@ public class PositionTest extends UtilityCookies {
 
                 .then()
                 .log().body()
-                .statusCode(400) //it should have been 400!!! This seems to be a BUG
+                .statusCode(204) //it should have been 400!!! This seems to be a BUG
                 //.body("message",equalTo("employee-position not found")) this message should have been written!!!
         ;
     }

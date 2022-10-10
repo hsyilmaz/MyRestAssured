@@ -1,8 +1,8 @@
 -------------------------------------------------------------------------------
 Test set: TestSuite
 -------------------------------------------------------------------------------
-Tests run: 6, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 10.943 s <<< FAILURE! - in TestSuite
-deletePositionByIdNegative(ProjectShip.PositionTest)  Time elapsed: 0.399 s  <<< FAILURE!
+Tests run: 6, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 8.467 s <<< FAILURE! - in TestSuite
+deletePositionByIdNegative(ProjectShip.PositionTest)  Time elapsed: 0.397 s  <<< FAILURE!
 java.lang.AssertionError: 
 1 expectation failed.
 Expected status code <400> but was <204>.

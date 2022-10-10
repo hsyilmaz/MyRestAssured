@@ -1,9 +1,8 @@
 Campus/Model/Country.class
-Tasks.class
-POJO/Location.class
 POJO/Place.class
-GoRest/User.class
 Campus/CountryTest.class
 POJO/Todos.class
 GoRest/GoRestUserTest.class
+Tasks.class
+POJO/Location.class
 ZippoTest.class

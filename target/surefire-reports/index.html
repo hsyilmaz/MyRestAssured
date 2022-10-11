@@ -26,7 +26,7 @@
       <span class="top-banner-title-font">Test results</span>
       <button class="button" id="button">Switch Retro Theme</button> <!-- button -->
       <br/>
-      <span class="top-banner-font-1">1 suite, 1 failed test</span>
+      <span class="top-banner-font-1">1 suite</span>
     </div> <!-- top-banner-root -->
     <div class="navigator-root">
       <div class="navigator-suite-header">
@@ -40,7 +40,7 @@
         <div class="rounded-window">
           <div class="suite-header light-rounded-window-top">
             <a href="#" class="navigator-link" panel-name="suite-All_Test_Suite">
-              <span class="suite-name border-failed">All Test Suite</span>
+              <span class="suite-name border-passed">All Test Suite</span>
             </a> <!-- navigator-link -->
           </div> <!-- suite-header light-rounded-window-top -->
           <div class="navigator-suite-content">
@@ -93,21 +93,7 @@
               <div class="suite-section-content">
                 <ul>
                   <li>
-                    <span class="method-stats">6 methods, 1 failed,   5 passed</span>
-                  </li>
-                  <li>
-                    <span class="method-list-title failed">Failed methods</span>
-                    <span class="show-or-hide-methods failed">
-                      <a href="#" panel-name="suite-All_Test_Suite" class="hide-methods failed suite-All_Test_Suite"> (hide)</a> <!-- hide-methods failed suite-All_Test_Suite -->
-                      <a href="#" panel-name="suite-All_Test_Suite" class="show-methods failed suite-All_Test_Suite"> (show)</a> <!-- show-methods failed suite-All_Test_Suite -->
-                    </span>
-                    <div class="method-list-content failed suite-All_Test_Suite">
-                      <span>
-                        <img width="3%" src="failed.png"/>
-                        <a href="#" class="method navigator-link" panel-name="suite-All_Test_Suite" title="ProjectShip.PositionTest" hash-for-method="deletePositionByIdNegative">deletePositionByIdNegative</a> <!-- method navigator-link -->
-                      </span>
-                      <br/>
-                    </div> <!-- method-list-content failed suite-All_Test_Suite -->
+                    <span class="method-stats">6 methods,   6 passed</span>
                   </li>
                   <li>
                     <span class="method-list-title passed">Passed methods</span>
@@ -118,27 +104,32 @@
                     <div class="method-list-content passed suite-All_Test_Suite">
                       <span>
                         <img width="3%" src="passed.png"/>
-                        <a href="#" class="method navigator-link" panel-name="suite-All_Test_Suite" title="ProjectShip.PositionTest" hash-for-method="UpdatePositionNegative">UpdatePositionNegative</a> <!-- method navigator-link -->
+                        <a href="#" class="method navigator-link" panel-name="suite-All_Test_Suite" title="Campus.CountryTest" hash-for-method="createCountry">createCountry</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                       <span>
                         <img width="3%" src="passed.png"/>
-                        <a href="#" class="method navigator-link" panel-name="suite-All_Test_Suite" title="ProjectShip.PositionTest" hash-for-method="createPosition">createPosition</a> <!-- method navigator-link -->
+                        <a href="#" class="method navigator-link" panel-name="suite-All_Test_Suite" title="Campus.CountryTest" hash-for-method="createCountryNegative">createCountryNegative</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                       <span>
                         <img width="3%" src="passed.png"/>
-                        <a href="#" class="method navigator-link" panel-name="suite-All_Test_Suite" title="ProjectShip.PositionTest" hash-for-method="createPositionNegative">createPositionNegative</a> <!-- method navigator-link -->
+                        <a href="#" class="method navigator-link" panel-name="suite-All_Test_Suite" title="Campus.CountryTest" hash-for-method="deleteCountryById">deleteCountryById</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                       <span>
                         <img width="3%" src="passed.png"/>
-                        <a href="#" class="method navigator-link" panel-name="suite-All_Test_Suite" title="ProjectShip.PositionTest" hash-for-method="deletePositionById">deletePositionById</a> <!-- method navigator-link -->
+                        <a href="#" class="method navigator-link" panel-name="suite-All_Test_Suite" title="Campus.CountryTest" hash-for-method="deleteCountryByIdNegative">deleteCountryByIdNegative</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                       <span>
                         <img width="3%" src="passed.png"/>
-                        <a href="#" class="method navigator-link" panel-name="suite-All_Test_Suite" title="ProjectShip.PositionTest" hash-for-method="updatePosition">updatePosition</a> <!-- method navigator-link -->
+                        <a href="#" class="method navigator-link" panel-name="suite-All_Test_Suite" title="Campus.CountryTest" hash-for-method="updateCountry">updateCountry</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-All_Test_Suite" title="Campus.CountryTest" hash-for-method="updateCountryNegative">updateCountryNegative</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                     </div> <!-- method-list-content passed suite-All_Test_Suite -->
@@ -153,88 +144,52 @@
     <div class="wrapper">
       <div class="main-panel-root">
         <div panel-name="suite-All_Test_Suite" class="panel All_Test_Suite">
-          <div class="suite-All_Test_Suite-class-failed">
-            <div class="main-panel-header rounded-window-top">
-              <img src="failed.png"/>
-              <span class="class-name">ProjectShip.PositionTest</span>
-            </div> <!-- main-panel-header rounded-window-top -->
-            <div class="main-panel-content rounded-window-bottom">
-              <div class="method">
-                <div class="method-content">
-                  <a name="deletePositionByIdNegative">
-                  </a> <!-- deletePositionByIdNegative -->
-                  <span class="method-name">deletePositionByIdNegative</span>
-                  <div class="stack-trace">java.lang.AssertionError: 1 expectation failed.
-Expected status code &lt;400&gt; but was &lt;204&gt;.
-
-	at org.codehaus.groovy.runtime.callsite.ConstructorSite$ConstructorSiteNoUnwrap.callConstructor(ConstructorSite.java:84)
-	at org.codehaus.groovy.runtime.callsite.CallSiteArray.defaultCallConstructor(CallSiteArray.java:59)
-	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.callConstructor(AbstractCallSite.java:263)
-	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.callConstructor(AbstractCallSite.java:277)
-	at io.restassured.internal.ResponseSpecificationImpl$HamcrestAssertionClosure.validate(ResponseSpecificationImpl.groovy:493)
-	at io.restassured.internal.ResponseSpecificationImpl$HamcrestAssertionClosure$validate$1.call(Unknown Source)
-	at io.restassured.internal.ResponseSpecificationImpl.validateResponseIfRequired(ResponseSpecificationImpl.groovy:674)
-	at org.codehaus.groovy.runtime.callsite.PlainObjectMetaMethodSite.doInvoke(PlainObjectMetaMethodSite.java:43)
-	at org.codehaus.groovy.runtime.callsite.PogoMetaMethodSite$PogoCachedMethodSiteNoUnwrapNoCoerce.invoke(PogoMetaMethodSite.java:193)
-	at org.codehaus.groovy.runtime.callsite.PogoMetaMethodSite.callCurrent(PogoMetaMethodSite.java:61)
-	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.callCurrent(AbstractCallSite.java:185)
-	at io.restassured.internal.ResponseSpecificationImpl.statusCode(ResponseSpecificationImpl.groovy:126)
-	at io.restassured.specification.ResponseSpecification$statusCode$0.callCurrent(Unknown Source)
-	at io.restassured.internal.ResponseSpecificationImpl.statusCode(ResponseSpecificationImpl.groovy:134)
-	at io.restassured.internal.ValidatableResponseOptionsImpl.statusCode(ValidatableResponseOptionsImpl.java:89)
-	at io.restassured.internal.ValidatableResponseImpl.super$2$statusCode(ValidatableResponseImpl.groovy)
-	at groovy.lang.MetaMethod.doMethodInvoke(MetaMethod.java:323)
-	at groovy.lang.MetaClassImpl.invokeMethod(MetaClassImpl.java:1268)
-	at org.codehaus.groovy.runtime.ScriptBytecodeAdapter.invokeMethodOnSuperN(ScriptBytecodeAdapter.java:144)
-	at io.restassured.internal.ValidatableResponseImpl.statusCode(ValidatableResponseImpl.groovy:142)
-	at io.restassured.internal.ValidatableResponseImpl.statusCode(ValidatableResponseImpl.groovy)
-	at ProjectShip.PositionTest.deletePositionByIdNegative(PositionTest.java:112)
-	at java.util.ArrayList.forEach(ArrayList.java:1259)
-... Removed 46 stack frames
-</div> <!-- stack-trace -->
-                </div> <!-- method-content -->
-              </div> <!-- method -->
-            </div> <!-- main-panel-content rounded-window-bottom -->
-          </div> <!-- suite-All_Test_Suite-class-failed -->
           <div class="suite-All_Test_Suite-class-passed">
             <div class="main-panel-header rounded-window-top">
               <img src="passed.png"/>
-              <span class="class-name">ProjectShip.PositionTest</span>
+              <span class="class-name">Campus.CountryTest</span>
             </div> <!-- main-panel-header rounded-window-top -->
             <div class="main-panel-content rounded-window-bottom">
               <div class="method">
                 <div class="method-content">
-                  <a name="UpdatePositionNegative">
-                  </a> <!-- UpdatePositionNegative -->
-                  <span class="method-name">UpdatePositionNegative</span>
+                  <a name="createCountry">
+                  </a> <!-- createCountry -->
+                  <span class="method-name">createCountry</span>
                 </div> <!-- method-content -->
               </div> <!-- method -->
               <div class="method">
                 <div class="method-content">
-                  <a name="createPosition">
-                  </a> <!-- createPosition -->
-                  <span class="method-name">createPosition</span>
+                  <a name="createCountryNegative">
+                  </a> <!-- createCountryNegative -->
+                  <span class="method-name">createCountryNegative</span>
                 </div> <!-- method-content -->
               </div> <!-- method -->
               <div class="method">
                 <div class="method-content">
-                  <a name="createPositionNegative">
-                  </a> <!-- createPositionNegative -->
-                  <span class="method-name">createPositionNegative</span>
+                  <a name="deleteCountryById">
+                  </a> <!-- deleteCountryById -->
+                  <span class="method-name">deleteCountryById</span>
                 </div> <!-- method-content -->
               </div> <!-- method -->
               <div class="method">
                 <div class="method-content">
-                  <a name="deletePositionById">
-                  </a> <!-- deletePositionById -->
-                  <span class="method-name">deletePositionById</span>
+                  <a name="deleteCountryByIdNegative">
+                  </a> <!-- deleteCountryByIdNegative -->
+                  <span class="method-name">deleteCountryByIdNegative</span>
                 </div> <!-- method-content -->
               </div> <!-- method -->
               <div class="method">
                 <div class="method-content">
-                  <a name="updatePosition">
-                  </a> <!-- updatePosition -->
-                  <span class="method-name">updatePosition</span>
+                  <a name="updateCountry">
+                  </a> <!-- updateCountry -->
+                  <span class="method-name">updateCountry</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="updateCountryNegative">
+                  </a> <!-- updateCountryNegative -->
+                  <span class="method-name">updateCountryNegative</span>
                 </div> <!-- method-content -->
               </div> <!-- method -->
             </div> <!-- main-panel-content rounded-window-bottom -->
@@ -251,7 +206,7 @@ Expected status code &lt;400&gt; but was &lt;204&gt;.
 &lt;suite guice-stage=&quot;DEVELOPMENT&quot; verbose=&quot;0&quot; name=&quot;All Test Suite&quot;&gt;
   &lt;test thread-count=&quot;5&quot; verbose=&quot;0&quot; name=&quot;Main test&quot;&gt;
     &lt;classes&gt;
-      &lt;class name=&quot;ProjectShip.PositionTest&quot;/&gt;
+      &lt;class name=&quot;Campus.CountryTest&quot;/&gt;
     &lt;/classes&gt;
   &lt;/test&gt; &lt;!-- Main test --&gt;
 &lt;/suite&gt; &lt;!-- All Test Suite --&gt;
@@ -293,34 +248,34 @@ data.addColumn('string', 'Class');
 data.addColumn('number', 'Time (ms)');
 data.addRows(6);
 data.setCell(0, 0, 0)
-data.setCell(0, 1, 'createPosition')
-data.setCell(0, 2, 'ProjectShip.PositionTest')
-data.setCell(0, 3, 1646);
+data.setCell(0, 1, 'updateCountryNegative')
+data.setCell(0, 2, 'Campus.CountryTest')
+data.setCell(0, 3, 2431);
 data.setCell(1, 0, 1)
-data.setCell(1, 1, 'createPositionNegative')
-data.setCell(1, 2, 'ProjectShip.PositionTest')
-data.setCell(1, 3, 502);
+data.setCell(1, 1, 'createCountry')
+data.setCell(1, 2, 'Campus.CountryTest')
+data.setCell(1, 3, 1572);
 data.setCell(2, 0, 2)
-data.setCell(2, 1, 'updatePosition')
-data.setCell(2, 2, 'ProjectShip.PositionTest')
-data.setCell(2, 3, 431);
+data.setCell(2, 1, 'createCountryNegative')
+data.setCell(2, 2, 'Campus.CountryTest')
+data.setCell(2, 3, 499);
 data.setCell(3, 0, 3)
-data.setCell(3, 1, 'deletePositionById')
-data.setCell(3, 2, 'ProjectShip.PositionTest')
-data.setCell(3, 3, 411);
+data.setCell(3, 1, 'updateCountry')
+data.setCell(3, 2, 'Campus.CountryTest')
+data.setCell(3, 3, 478);
 data.setCell(4, 0, 4)
-data.setCell(4, 1, 'deletePositionByIdNegative')
-data.setCell(4, 2, 'ProjectShip.PositionTest')
-data.setCell(4, 3, 389);
+data.setCell(4, 1, 'deleteCountryById')
+data.setCell(4, 2, 'Campus.CountryTest')
+data.setCell(4, 3, 396);
 data.setCell(5, 0, 5)
-data.setCell(5, 1, 'UpdatePositionNegative')
-data.setCell(5, 2, 'ProjectShip.PositionTest')
-data.setCell(5, 3, 373);
+data.setCell(5, 1, 'deleteCountryByIdNegative')
+data.setCell(5, 2, 'Campus.CountryTest')
+data.setCell(5, 3, 369);
 window.suiteTableData['All_Test_Suite']= { tableData: data, tableDiv: 'times-div-All_Test_Suite'}
 return data;
 }
               </script>
-              <span class="suite-total-time">Total running time: 3 seconds</span>
+              <span class="suite-total-time">Total running time: 5 seconds</span>
               <div id="times-div-All_Test_Suite">
               </div> <!-- times-div-All_Test_Suite -->
             </div> <!-- times-div -->
@@ -346,36 +301,34 @@ return data;
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <div class="chronological-class">
-              <div class="chronological-class-name">ProjectShip.PositionTest</div> <!-- chronological-class-name -->
+              <div class="chronological-class-name">Campus.CountryTest</div> <!-- chronological-class-name -->
               <div class="configuration-class before">
                 <span class="method-name">loginCampus</span>
                 <span class="method-start">0 ms</span>
               </div> <!-- configuration-class before -->
               <div class="test-method">
-                <span class="method-name">createPosition</span>
-                <span class="method-start">4113 ms</span>
+                <span class="method-name">createCountry</span>
+                <span class="method-start">3882 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
-                <span class="method-name">createPositionNegative</span>
-                <span class="method-start">5780 ms</span>
+                <span class="method-name">createCountryNegative</span>
+                <span class="method-start">5461 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
-                <span class="method-name">updatePosition</span>
-                <span class="method-start">6283 ms</span>
+                <span class="method-name">updateCountry</span>
+                <span class="method-start">5961 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
-                <span class="method-name">deletePositionById</span>
-                <span class="method-start">6715 ms</span>
+                <span class="method-name">deleteCountryById</span>
+                <span class="method-start">6440 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
-                <span class="method-name">UpdatePositionNegative</span>
-                <span class="method-start">7127 ms</span>
+                <span class="method-name">deleteCountryByIdNegative</span>
+                <span class="method-start">6837 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
-                <img src="failed.png">
-                </img>
-                <span class="method-name">deletePositionByIdNegative</span>
-                <span class="method-start">7501 ms</span>
+                <span class="method-name">updateCountryNegative</span>
+                <span class="method-start">7207 ms</span>
               </div> <!-- test-method -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->

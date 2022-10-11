@@ -1,8 +1,15 @@
 Campus/Model/Country.class
+ProjectShip/Model/SbjCategory.class
+ProjectShip/Model/UtilityCookies.class
+APIkey.class
+ProjectShip/PositionTest.class
 POJO/Place.class
 Campus/CountryTest.class
 POJO/Todos.class
 GoRest/GoRestUserTest.class
+ProjectShip/Model/Position.class
 Tasks.class
 POJO/Location.class
+ProjectShip/SubjCategoryTest.class
 ZippoTest.class
+GoRest/Model/User.class

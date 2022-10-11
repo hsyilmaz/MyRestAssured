@@ -7,19 +7,17 @@ public class Position {
     private String shortName;
     private String tenantId;
 
+    public void setId(String id) {
+        this.id=id;
+    }
     public void setName(String name) {
         this.name = name;
     }
-
     public void setShortName(String shortName) {
         this.shortName = shortName;
     }
-
-    public void setTenantId(String tenantId) {
-        this.tenantId = tenantId;
-    }
-    public void setId(String id) {
-        this.id=id;
+    public void setTenantId(String tenantId){
+        this.tenantId=tenantId;
     }
 
     public String getName() {
@@ -30,9 +28,7 @@ public class Position {
         return shortName;
     }
 
-    public String getTenantId() {
-        return tenantId;
-    }
+    public String getTenantId() { return tenantId;}
 
     public String getId() {
         return id;

@@ -163,18 +163,16 @@ public class GoRestUserTest {
         // TODO : 3 usersın id sini alınız (path ve jsonPath ile ayrı ayrı yapınız) //(v1 version boyle idi: data.[2].id)
 
         List <Integer> idUsers=response.path("id");
+            {for (int i = 0; i < 3; i++) System.out.println(idUsers.get(i));}
+
         List<Integer> idUsersJsonPath = response.jsonPath().getList("id");
-            System.out.println("idUsers = " + idUsers);
             System.out.println("idUsersJson = " + idUsersJsonPath);
 
         int idUserThird = response.path("[2].id");
         int idUser3rd = response.jsonPath().getInt("[2].id");
-            System.out.println("idUser3. = " + idUserThird);
-            System.out.println("idUser3. = " + idUser3rd);
+            System.out.println(idUserThird); System.out.println(idUser3rd);
 
     }
-
-
 
     @Test       // TODO : GetUserByID testinde dönen user ı bir nesneye atınız.
     public void getUserByIDExtract() {

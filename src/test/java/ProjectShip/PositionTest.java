@@ -19,7 +19,7 @@ public class PositionTest extends UtilityCookies {
     String positionID;
     String positionName = getRandomName();
     String positionShortName = getShortRandomName();
-    //String positionTenantID = "5fe0786230cc4d59295712cf"; it was set as active in Model Class/Position.
+    //String positionTenantID;it was set as active in Model Class/Position.
 
     @Test
     public void createPosition(){
@@ -36,6 +36,7 @@ public class PositionTest extends UtilityCookies {
                         .then()
                         .log().body()
                         .statusCode(201)
+                        .body("name",equalTo(positionName))
                         .extract().jsonPath().getString("id")
                         //.extract().path("id")
         ;
@@ -59,7 +60,7 @@ public class PositionTest extends UtilityCookies {
     }
     @Test(dependsOnMethods = "createPosition", priority = 2)
     public void updatePosition(){
-        positionName=getRandomName();
+        positionName=getRandomName();  // positionName and shortName edited or updated.
         positionShortName=getShortRandomName();
 
         Position position = new Position(positionName,positionShortName);
@@ -91,7 +92,7 @@ public class PositionTest extends UtilityCookies {
                 .delete("school-service/api/employee-position/{positionID}")
 
                 .then()
-                .log().body()
+                //.log().body()  --no need because no return
                 .statusCode(204)
         ;
 
@@ -108,7 +109,7 @@ public class PositionTest extends UtilityCookies {
                 .delete("school-service/api/employee-position/{positionID}")
 
                 .then()
-                .log().body()
+                //.log().body() --no need because no return
                 .statusCode(204) //it should have been 400!!! This seems to be a BUG
                 //.body("message",equalTo("employee-position not found")) this message should have been written!!!
         ;
@@ -133,6 +134,7 @@ public class PositionTest extends UtilityCookies {
                 .log().body()
                 .statusCode(400)
                 .body("detail", equalTo("EmployeePosition is null"))
+                .body("message",equalTo("Can't find Position"))
         ;
     }
 

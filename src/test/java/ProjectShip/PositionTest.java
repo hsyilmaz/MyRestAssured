@@ -10,12 +10,7 @@ import static org.hamcrest.Matchers.equalTo;
 
 
 public class PositionTest extends UtilityCookies {
-    public String getRandomName(){
-        return RandomStringUtils.randomAlphabetic(6);
-    }
-    public String getShortRandomName(){
-        return RandomStringUtils.randomAlphabetic(4);
-    }
+
     String positionID;
     String positionName = getRandomName();
     String positionShortName = getShortRandomName();

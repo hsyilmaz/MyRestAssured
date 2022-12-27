@@ -11,8 +11,6 @@ import static org.hamcrest.Matchers.equalTo;
 
 public class SubjCategoryTest extends UtilityCookies {
 
-    public String getRandomName(){return RandomStringUtils.randomAlphabetic(8);}
-    public String getRandomCode(){return RandomStringUtils.randomAlphanumeric(4);}
     String sbjCatId;
     String sbjCatName = getRandomName();
     String sbjCatCode = getRandomCode();

@@ -2,6 +2,7 @@ package ProjectShip.Model;
 
 import io.restassured.http.ContentType;
 import io.restassured.http.Cookies;
+import org.apache.commons.lang3.RandomStringUtils;
 import org.testng.annotations.BeforeClass;
 
 import java.util.HashMap;
@@ -35,5 +36,14 @@ public class UtilityCookies {
                         .statusCode(200)
                         .extract().response().getDetailedCookies()
         ;
+    }
+    public String getRandomName() {
+        return RandomStringUtils.randomAlphabetic(6);
+    }
+    public String getShortRandomName(){
+        return RandomStringUtils.randomAlphabetic(4);
+    }
+    public String getRandomCode() {
+        return RandomStringUtils.randomAlphabetic(3);
     }
 }
